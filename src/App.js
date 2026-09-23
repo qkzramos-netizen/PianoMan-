@@ -1,23 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import Base from "./TowerDefenseCompo/Battlefield/Base";
+import Mobs from "./TowerDefenseCompo/Battlefield/Mobs";
+import HPbar from "./TowerDefenseCompo/HPbar";
+import Keynote from "./TowerDefenseCompo/Keynote";
+import NoteTrack from "./TowerDefenseCompo/NoteTrack";
+import Tier from "./TowerDefenseCompo/Tier";
+import Keyboard from"./TowerDefenseCompo/Keyboard";
+import "./App.css";
 
-function App() {
+function App () {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <div className="game-container">
+      <Tier />
+      <NoteTrack />
+      <HPbar />
+    </div>
+    <div className="battlefield">
+      <Base />
+      <Mobs />
+    </div>
+
+    <div className="keyboard">
+        <Keyboard ilawNote="C" Press={(n) => console.log(n)} />
+          </div>
     </div>
   );
 }
