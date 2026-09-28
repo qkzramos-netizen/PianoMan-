@@ -1,0 +1,73 @@
+.note-track {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  width: 280px;
+  height: calc(72vh); 
+  overflow: visible;
+  background: transparent;
+  border: none;
+  pointer-events: none;
+}
+
+.falling-cloud {
+  position: absolute;
+  top: -70px;
+  width: 74px;
+  margin-left: -37px;
+  animation: fall 4s linear infinite both;
+}
+
+.cloud-shape {
+  position: relative;
+  width: 70px;
+  height: 44px;
+  background: #f3ecdc;
+  border-radius: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.cloud-shape::before,
+.cloud-shape::after {
+  content: "";
+  position: absolute;
+  background: #f3ecdc;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.cloud-shape::before { width: 32px; height: 32px; top: -14px; left: 8px; }
+.cloud-shape::after  { width: 26px; height: 26px; top: -10px; right: 6px; }
+
+.note-photo {
+  position: absolute;
+  inset: 4px;
+  width: calc(100% - 8px);
+  height: calc(100% - 8px);
+  object-fit: contain;
+  z-index: 0;
+}
+
+.cloud-C  { left: 0px; }
+.cloud-D  { left: 60px; }
+.cloud-E  { left: 100px; }
+.cloud-F  { left: 140px; }
+.cloud-G  { left: 180px; }
+.cloud-A  { left: 220px; }
+.cloud-B  { left: 260px; }
+.cloud-Cs { left: 40px; }
+.cloud-Ds { left: 80px; }
+.cloud-Fs { left: 160px; }
+.cloud-Gs { left: 200px; }
+.cloud-As { left: 240px; }
+
+@keyframes fall {
+  from { top: -70px; }
+  to   { top: calc(100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .falling-cloud { animation-duration: 12s; }
+}

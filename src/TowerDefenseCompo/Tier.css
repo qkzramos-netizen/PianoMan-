@@ -1,0 +1,40 @@
+.tier {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 200px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas:
+    "label number"
+    "mobs  mobs";
+  align-items: baseline;
+  padding: 6px 10px;
+  background: transparent;
+  border: none;
+  color: #f3ecdc;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  text-align: right;
+}
+
+.tier-label {
+  grid-area: label;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: lighter;
+  font-size: 16px;
+  color: #c9a24b;
+}
+
+.tier-number {
+  grid-area: number;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: lighter;
+  font-size: 44px;
+  line-height: 1;
+}
+
+.tier-mobs {
+  grid-area: mobs;
+  font-size: 13px;
+  opacity: 0.9;
+}
